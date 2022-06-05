@@ -1,0 +1,76 @@
+.body{
+    margin: 0;
+    padding: 0;
+}
+.header {
+    width: 300px;   
+    margin: 15px 15px 15px 15px;
+}
+.header img {
+    float: left;
+    display: flex;
+}
+.header h1{
+    margin-left: 50px;
+}
+.bodybig{
+    background-color: #1D1B1B
+}
+.bodysmall {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 300px; 
+}
+.bodysmall h1{
+    font-size: 170%;
+    color: #EC4D37; 
+}
+.bodysmall h2{
+    font-size: 120%;
+    color: #EC4D37; 
+}
+.bodysmall img{
+    width: 15px;
+    margin-right: 10px;
+}
+.bodysmall p{
+    font-size: 15px;
+    color: #EC4D37; 
+}
+#inputabc{
+    display : none;
+}
+#input2{
+    width: 97%;
+}
+#buttonCreate{
+    background-color: #EC4D37; 
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    margin: 6px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 100%;
+}
+#buttonJoin{
+    background-color: #EC4D37; 
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    margin: 6px 0px 0px 0px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 100%;
+}
+#button{
+    padding-bottom: 10px;
+}

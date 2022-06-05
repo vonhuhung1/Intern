@@ -1,0 +1,22 @@
+{
+    "name": "Record Video222",
+    "description": "Record video",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "browser_action": {
+      "default_title": "Record video",
+      "default_icon": "images/record16.png",
+      "icons": { 
+        "16": "images/record16.png",
+        "32": "images/record32.png",
+        "64": "images/record64.png",
+        "128": "images/record128.png" 
+      },
+      "default_popup": "index.html"
+    },
+    "permissions": [
+      "tabs",
+      "desktopCapture",
+      "socket.io.js"
+    ]
+}
