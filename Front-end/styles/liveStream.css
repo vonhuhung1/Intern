@@ -33,6 +33,15 @@
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+    
+}
+#video {
+    padding-top: 30px;
+    width: 700px;
+    height: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 #stop{
     background-color: white; 

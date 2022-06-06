@@ -26,10 +26,9 @@ io.on('connection', socket => {
     })
   })
   socket.emit("Sever-send-roomLive",x);
-  socket.on("Startshare-data",(dataLive) => {
-    console.log(dataLive);
+  socket.on("StartShare-Data",(dataLive) => {
+    console.log(dataLive)
     socket.on("Send-roomLive", (roomIDLive) => {
-      console.log(roomIDLive)
       socket.to(roomIDLive).emit('Sever-send-dataLiveStart', dataLive);
     })
   })

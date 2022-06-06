@@ -9,12 +9,20 @@
 </head>
     <body class="body" align = "center">
         <h1>Live Stream Time</h1>
-        <video id="video" width="700" height="500" autoplay controls></video>
+        <div id="Create-Room">
+            <h3>Room Id: </h3>
+            <p id = "Room-id"></p>
+        </div>
+        <div id="Senddata-Room">
+            <button id="btn-sendDataLive" type="button">Send Data To Room</button>
+            <input  id="txt_roomId">
+        </div> 
+        <video id="video"  autoplay controls></video>
         <p class="buttonLive">
             <button id="start">Start Sharing</button>
             <button id="stop">Stop Sharing</button>
         </p>
+        <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
         <script src="scripts/liveStream.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
     </body>
 </html>
