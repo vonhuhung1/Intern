@@ -46,7 +46,10 @@ var streams ;
 }
 
 function stopSharing() {
-    displayScreen(null);
+    displayScreen(null,() => {
+        let tracks = videoElem.srcObject.getTracks();
+        tracks.forEach(track => track.stop());
+    });
 }  
     let btn4 = document.getElementById('btn-sendDataLive')
     btn4.addEventListener("click", () => {

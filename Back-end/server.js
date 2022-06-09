@@ -8,7 +8,8 @@ var cors = require('cors');
 const io = new Server(server,{
   cors: {
     origin: "http://localhost:5501",
-    methods: ["GET", "POST"]
+    methods: ["GET", "POST"],
+    credentials:true,
   },
 });
 
@@ -26,9 +27,9 @@ io.on('connection', socket => {
     })
   })
   socket.emit("Sever-send-roomLive",x);
-  socket.on("StartShare-Data",(dataLive) => {
-    console.log(dataLive)
-    socket.on("Send-roomLive", (roomIDLive) => {
+  socket.on("Send-Data-Live",(dataLive) => {
+    console.log(dataLive);
+    socket.on("Send-room-Live", (roomIDLive) => {
       socket.to(roomIDLive).emit('Sever-send-dataLiveStart', dataLive);
     })
   })

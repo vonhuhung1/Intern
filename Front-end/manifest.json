@@ -1,10 +1,10 @@
 {
-    "name": "Record Video222",
-    "description": "Record video",
+    "name": "Streaming Desktop",
+    "description": "Streaming Desktop",
     "version": "0.0.1",
     "manifest_version": 2,
     "browser_action": {
-      "default_title": "Record video",
+      "default_title": "Streaming Desktop",
       "default_icon": "images/record16.png",
       "icons": { 
         "16": "images/record16.png",
@@ -14,9 +14,10 @@
       },
       "default_popup": "index.html"
     },
+   "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.socket.io/4.5.0/socket.io.min.js; object-src 'self'",
     "permissions": [
       "tabs",
-      "desktopCapture",
-      "socket.io.js"
+      "https://cdn.socket.io/4.5.0/socket.io.min.js",
+      "<all_urls>"
     ]
 }

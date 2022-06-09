@@ -1,7 +1,6 @@
 
-// socket.on('connect',() => {
-//     console.log("client connected");
-// })
+const socket = io.connect('http://localhost:3000')
+
 
 document.getElementById('buttonCreate').addEventListener('click',recordClick,true);
 
