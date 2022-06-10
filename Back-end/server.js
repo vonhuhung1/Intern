@@ -18,6 +18,10 @@ const port = 3000;
 app.use(cors());
 
 io.on('connection', socket => {
+  //Record
+  socket.on("Client-send-room-data",room => {
+    socket.join(room);
+  })
   console.log("user connected: " + socket.id)
   let x = socket.id;
   socket.emit("Sever-send-room",x);
@@ -26,17 +30,10 @@ io.on('connection', socket => {
       socket.to(roomID).emit('Sever-send-data', data);
     })
   })
+  let rooms = io.sockets.adapter.rooms;
+  console.log(rooms);
+  //Live
   socket.emit("Sever-send-roomLive",x);
-  socket.on("Send-Data-Live",(dataLive) => {
-    console.log(dataLive);
-    socket.on("Send-room-Live", (roomIDLive) => {
-      socket.to(roomIDLive).emit('Sever-send-dataLiveStart', dataLive);
-    })
-  })
-  // socket.on("StopShare-Data",(dataLiveStop) => {
-  //   socket.to(roomIDLive).emit('Sever-send-dataLiveStop', dataLiveStop);
-  // })
-  
 });
 
 

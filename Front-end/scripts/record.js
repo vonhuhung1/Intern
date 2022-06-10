@@ -6,7 +6,8 @@ socket.on("Sever-send-data", record => {
 })
 
 socket.on("Sever-send-room",roomId => {
-document.getElementById("Room-id").innerHTML = roomId;})
+    document.getElementById("Room-id").innerHTML = roomId;
+})
 
 let btn4 = document.getElementById('btn-sendData')
 btn4.addEventListener("click", () => {

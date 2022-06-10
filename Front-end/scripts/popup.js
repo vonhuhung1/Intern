@@ -1,6 +1,4 @@
-
 const socket = io.connect('http://localhost:3000')
-
 
 document.getElementById('buttonCreate').addEventListener('click',recordClick,true);
 
@@ -14,24 +12,14 @@ function joinClick(){
     document.getElementById('inputabc').style.display = 'block';
 }
 
-const a = document.getElementById('buttonJoin').addEventListener('click',joinClick2,false)
-const room = document.getElementById('inputabc');
+document.getElementById('buttonJoin').addEventListener('dblclick',joinClick2,true)
+const room = document.getElementById('input2');
 function joinClick2() {
-    console.log(room.value);
-    socket.on("Send-room-data", data =>{
-      if(room.value == data){
+    if(room.value=="") { alert("Please enter your friend's room")}
+    else{
         chrome.windows.create({
-              url: 'http://localhost:5500/record.html'
-        });
-        socket.emit("client-send-data-room",room.value);
-      }else alert("Room " + room.value +" is not defind")
-    })
-    //  else alert("Room "+room.value+" is not define");
+                url: 'http://localhost:5501/record.html'
+            });
+            socket.emit("Client-send-room-data",room.value)
+        }
 } 
-
-// if(data==true){
-//   console.log(data);
-//   chrome.windows.create({
-//     url: 'http://localhost:5500/record.html'
-//   });
-// }else alert("Room " + data.value +" is not defind")
