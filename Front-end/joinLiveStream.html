@@ -5,28 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page LiveStream</title>
-    <link rel="stylesheet" href="styles/liveStream.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/joinLiveStream.css">
 </head>
     <body class="body" align = "center">
         <h1>Live Stream Time</h1>
-        <div id="Create-Room">
+        <div id="create-room">
             <h3>Room Id: </h3>
-            <p id = "room-id"></p>
+            <p id = "room-id2"></p>
         </div>
-        <div id="senddata-room">
-            <button id="btn-senddatalive" type="button">Send Data To Room</button>
+        <div id="Senddata-Room">
+            <button id="btn-senddatalive" type="button">Share Live To Room</button>
             <input  id="txt-roomid">
         </div> 
         <video id="video"  autoplay controls></video>
-        <p class="buttonlive">
+        <p class="buttonLive">
             <button id="start">Start Sharing</button>
             <button id="stop">Stop Sharing</button>
         </p>
         <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/peerjs@1.3.2/dist/peerjs.min.js"></script>
-        <script src="scripts/liveStream.js"></script>
+        <script src="scripts/joinLiveStream3.js"></script>
     </body>
 </html>

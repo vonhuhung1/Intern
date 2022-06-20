@@ -1,14 +1,13 @@
-let btn = document.querySelector(".recordPage-btn")
+const btn = document.getElementById("btn-recordpage")
+const btn2 = document.getElementById("btn-livestreampage")
 
-btn.addEventListener("click", async function () {
+btn.addEventListener("click", () => {
     chrome.windows.create({
     url:'http://localhost:5501/record.html'
     });
 })
 
-let btn2 = document.querySelector(".liveStreamPage-btn")
-
-btn2.addEventListener("click", async function () {
+btn2.addEventListener("click", () => {
     chrome.windows.create({
         url:'http://localhost:5501/liveStream.html'
     });

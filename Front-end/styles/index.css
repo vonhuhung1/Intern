@@ -1,6 +1,7 @@
 .body{
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
 }
 .header {
     width: 300px;   
@@ -13,37 +14,37 @@
 .header h1{
     margin-left: 50px;
 }
-.bodybig{
+.body-big{
     background-color: #1D1B1B
 }
-.bodysmall {
+.body-small {
     margin-left: 30px;
     margin-right: 30px;
     width: 300px; 
 }
-.bodysmall h1{
+.body-small h1{
     font-size: 170%;
     color: #EC4D37; 
 }
-.bodysmall h2{
+.body-small h2{
     font-size: 120%;
     color: #EC4D37; 
 }
-.bodysmall img{
+.body-small img{
     width: 15px;
     margin-right: 10px;
 }
-.bodysmall p{
+.body-small p{
     font-size: 15px;
     color: #EC4D37; 
 }
-#inputabc{
+#input-room{
     display : none;
 }
 #input2{
     width: 97%;
 }
-#buttonCreate{
+#btn-create{
     background-color: #EC4D37; 
     border: none;
     color: white;
@@ -57,7 +58,7 @@
     border-radius: 12px;
     width: 100%;
 }
-#buttonJoin{
+#btn-join{
     background-color: #EC4D37; 
     border: none;
     color: white;

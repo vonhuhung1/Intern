@@ -6,28 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Record</title>
     <link rel="stylesheet" href="styles/record.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
     <body>
-        <div class="pageRecord" align ='center' >
-            <div id="recordForm">
-                <h1 class="title">Record Time</h1>
-                <div>
-                    <div id="Create-Room">
-                        <h3>Room Id: </h3>
-                        <p id = "Room-id"></p>
-                    </div>
-                    <div id="Join-Room">
-                        <button id="btn-sendData" type="button">Send Data To Room</button>
-                        <input  id="txt_roomId2">
-                    </div>  
-                </div>
+        <div class="page-record" align ='center' >
+            <div id="record-form">
                 <video  class="video" controls></video>
                 <div class="record-div">
-                    <button class="record-btn" > Start Recording </button>   
+                    <button id="btn-record" > Start Recording </button>   
                 </div>
             </div>
+            <div class="boxs">
+                <div class="box1" >
+                    <p>Video Information :</p>
+                    <div class="into-box1">
+                        <p class= "get-date">
+                            Created Time :
+                            <span id="get-date"></span>
+                        </p>
+                        <p class= "get-time">
+                            Video Length :
+                            <span id="get-time"></span>
+                        </p>
+                        <p class= "get-size">
+                            Video Size :
+                            <span id="get-size"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="box2" >
+                    <p>Download Here</p>
+                    <div class="box2-btn">
+                        <button id="btn-download" >Download</button>   
+                    </div>
+                </div>
+            </div>  
         </div>
-        <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
         <script src="scripts/record.js"></script>
     </body>
 </html>
