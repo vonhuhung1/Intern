@@ -3,7 +3,8 @@ const { Server } = require("socket.io");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
-var cors = require("cors");
+const cors = require("cors");
+const { getEnvironmentData } = require("worker_threads");
 
 const io = new Server(server, {
   cors: {
@@ -17,26 +18,36 @@ const port = 3000;
 
 app.use(cors());
 
+//Event connect
 io.on("connection", (socket) => {
-  //Record
   console.log("user connected: " + socket.id);
   let x = socket.id;
   socket.emit("Sever-send-room", x);
-  socket.on("Client-send-data", (data) => {
-    console.log(data);
-    socket.on("Send-room", (roomID) => {
-      socket.to(roomID).emit("Sever-send-data", data);
-    });
-  });
-  //Live
+  function getData(room){
+    return room;
+  }
   socket.on("Room-Join", (data) => {
-    console.log(data);
-    socket.join(data);
-    socket.emit("Send-Room-Create", data);
+    if(rooms.has(data))
+      {
+        socket.emit("Status",true)
+        socket.emit("Send-Room-Create", data);
+        getData(data);
+      } else {
+        socket.emit("Status",false);
+    }
   });
+  socket.join(getData());
+  //Check room
   let rooms = socket.adapter.rooms;
+  socket.emit("send-rooms",rooms);
   console.log(rooms);
+  //Event disconnect
+  socket.on("disconnect", () => {
+    console.log("user disconnected: " + socket.id);
+  });
 });
+
+
 
 server.listen(port, () => {
   console.log(`Server Listening to port ${port}`);

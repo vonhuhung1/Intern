@@ -7,12 +7,14 @@ socket.on("Sever-send-room", (roomIdLive) => {
   const btn = document.getElementById("btn-senddatalive");
   const peer = new Peer(roomIdLive);
 
+  //Custom peerid
   peer.on("open", (id) => {
     document.getElementById("room-id").innerHTML = id;
     socket.emit("User", id);
   });
 
-  var displayMediaOptions = {
+  //Option 
+  const displayMediaOptions = {
     video: {
       cursor: "always",
     },
@@ -30,14 +32,15 @@ socket.on("Sever-send-room", (roomIdLive) => {
     };
   }
   
-  var streams;
+  //Choose screen & get screen
+  let streams;
   async function startSharing() {
     await navigator.mediaDevices
       .getDisplayMedia(displayMediaOptions)
-      .then((stream) => {
+      .then(stream => {
         streams = stream;
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   }
@@ -49,6 +52,7 @@ socket.on("Sever-send-room", (roomIdLive) => {
     });
   }
 
+  //Create connect peer-peer
   btn.addEventListener("click", () => {
     roomSend = document.getElementById("txt-roomid").value;
     var call = peer.call(roomSend, streams);

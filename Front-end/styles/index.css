@@ -41,7 +41,10 @@
 #input-room{
     display : none;
 }
-#input2{
+#btn-join2{
+    display: none;
+}
+#input-join{
     width: 97%;
 }
 #btn-create{
@@ -54,6 +57,20 @@
     display: flex;
     font-size: 16px;
     margin: 6px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 100%;
+}
+#btn-join{
+    background-color: #EC4D37; 
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    margin: 6px 0px 0px 0px;
     cursor: pointer;
     border-radius: 12px;
     width: 100%;

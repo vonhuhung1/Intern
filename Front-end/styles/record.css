@@ -1,6 +1,5 @@
 body{
     font-family: 'Lato', sans-serif;
-    display: flex;
 }
 .page-record{
     width: 100%;
@@ -44,7 +43,7 @@ body{
 }
 .video {
     padding-top: 30px;
-    width: 91%;
+    width: 89%;
     height: 81%;
     display: block;
     margin-left: auto;
@@ -58,19 +57,23 @@ body{
 }
 .box1{
     float: left;
-    width: 46%;
-    height: 80%;
+    width: 44%;
+    height: 70%;
     border: 2px solid red;
     padding: 10px;
     border-radius: 25px;
 }
 .box1 p{
-    margin-top: 6px;
+    margin-top: 2px;
+}
+.header-box1{
+    border-bottom: #EC4D37 solid 2px;
+    width: 80%;
 }
 .box2{
     float: right;
-    width: 46%;
-    height: 80%;
+    width: 44%;
+    height: 70%;
     border: 2px solid red;
     padding: 10px;
     border-radius: 25px;
@@ -101,5 +104,5 @@ body{
     text-align: left;
 }
 #get-time{
-    padding-left: 10px;
+    padding-left: 12px;
 }

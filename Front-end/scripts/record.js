@@ -1,6 +1,7 @@
 const btn = document.getElementById("btn-record")
 const btn2 = document.getElementById("btn-download")
 
+//Get screen & get data screen record
 let time1;
 btn.addEventListener("click", async function () {
     let stream = await navigator.mediaDevices.getDisplayMedia({
@@ -26,12 +27,14 @@ mediaRecorder.addEventListener('stop', function(){
     let url = URL.createObjectURL(blob)
     let video = document.querySelector("video")
     video.src = url
+    //Event download
     btn2.onclick = () => {
         let a = document.createElement('a')
         a.href = url
         a.download = 'video.webm'
         a.click();
     }
+    //Get length record
     time2  = Date.now()
     let time = (time2 - time1)/1000
     // time = Math.trunc(time);
@@ -40,7 +43,6 @@ mediaRecorder.addEventListener('stop', function(){
     document.getElementById("get-time").innerHTML = time + "s";
     })
     mediaRecorder.start()
-
 })
 
 function getDate(){
